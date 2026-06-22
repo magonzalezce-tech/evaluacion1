@@ -75,28 +75,18 @@ java -version
 Al ejecutar el sistema, se simulará la carga centralizada de datos y la activación de los filtros automáticos de roles, además de demostrar la detección de datos inválidos:
 
 ```text
-=================================================
-   SISTEMA DE GESTIÓN CENTRALIZADO - LLANQUIHUE  
-=================================================
+✅ Inicialización completada. Registros cargados: 3
 
-[TODOS LOS REGISTROS EN EL SISTEMA]
-- RUT: 11.111.111-1 | Nombre: María Ortega | Correo: maria@email.com | Dirección: [Av. Vicente Pérez Rosales N° 450, Puerto Varas]
-- RUT: 22.222.222-2 | Nombre: Carlos Pérez | Correo: carlos@llanquihuetour.cl | Dirección: [Calle San Pedro N° 1025, Llanquihue] | Rol: Guía de Turismo | Sueldo Base: \$850000.0
-- RUT: 76.543.210-K | Nombre: Transporte Marítimo Lago | Correo: contacto@lago.cl | Dirección: [Costanera N° 101, Frutillar] | Servicio: Transporte | Contacto: Rupert Allen
+--- MENÚ DE CONTROL ---
+1. Mostrar todos los registros
+2. Buscar registro por nombre
+3. Salir del sistema
+Seleccione una opción: 1
 
-=================================================
-            FILTRADO AUTOMÁTICO DE ROLES         
-=================================================
-
---> COLABORADORES INTERNOS (EMPLEADOS):
-    * Carlos Pérez (Rol: Guía de Turismo)
-
---> SOCIOS COMERCIALES (PROVEEDORES):
-    * Empresa: Transporte Marítimo Lago | Contacto: Rupert Allen
-
---> CLIENTES REGISTRADOS:
-    * María Ortega | Correo: maria@email.com
-=================================================
+--- LISTADO GENERAL ---
+RUT: 11.111.111-1 | Nombre: María Ortega | Correo: maria@email.com | Dirección: [Av. Vicente Pérez Rosales N° 450, Puerto Varas]
+RUT: 22.222.222-2 | Nombre: Carlos Pérez | Correo: carlos@llanquihuetour.cl | Dirección: [Calle San Pedro N° 1025, Llanquihue] | Rol: Guía de Turismo | Sueldo Base: $850000.0
+RUT: 76.543.210-K | Nombre: Transporte Marítimo Lago | Correo: contacto@lago.cl | Dirección: [Costanera N° 101, Frutillar] | Servicio: Transporte | Contacto: Rupert Allen
 ```
 
 ---
