@@ -1,66 +1,54 @@
 package app;
 
-import model.Direccion;
-import model.Persona;
-import model.Empleado;
-import model.Proveedor;
-import java.util.ArrayList;
+import servicio.Gestion;
+import java.util.Scanner;
+
+
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("=======================================================");
-        System.out.println("   SISTEMA DE GESTIÓN CENTRALIZADO - LLANQUIHUE TOUR ");
-        System.out.println("=======================================================");
+        Gestion servicio = new Gestion();
+        Scanner scanner = new Scanner(System.in);
 
 
-        ArrayList<Persona> listaPersonas = new ArrayList<>();
+            System.out.println("=================================================");
+            System.out.println("   SISTEMA DE GESTIÓN CENTRALIZADO - LLANQUIHUE  ");
+            System.out.println("=================================================");
+            servicio.cargarDatosDesdeArchivo("personas.txt");
 
+        int opcion = 0;
+        do {
+            System.out.println("\n--- MENÚ DE CONTROL ---");
+            System.out.println("1. Mostrar todos los registros");
+            System.out.println("2. Buscar registro por nombre");
+            System.out.println("3. Salir del sistema");
+            System.out.print("Seleccione una opción: ");
 
-        Direccion dir1 = new Direccion("Av. Vicente Pérez Rosales", "450", "Puerto Varas");
-        Direccion dir2 = new Direccion("Calle San Pedro", "1025", "Llanquihue");
-        Direccion dir3 = new Direccion("Costanera", "101", "Frutillar");
+            try {
+                opcion = Integer.parseInt(scanner.nextLine());
 
-
-        listaPersonas.add(new Persona("11.111.111-1", "María Ortega", "maria@email.com", dir1));
-
-
-        listaPersonas.add(new Empleado("22.222.222-2", "Carlos Pérez", "carlos@llanquihuetour.cl", dir2, "Guía de Turismo", 850000));
-
-
-        listaPersonas.add(new Proveedor("76.543.210-K", "Transporte Marítimo Lago", "contacto@lago.cl", dir3, "Transporte", "Rupert Allen"));
-
-
-        System.out.println("\n[REGISTROS EN EL SISTEMA]");
-        for (Persona p : listaPersonas) {
-            System.out.println("- " + p);
-        }
-
-
-        System.out.println("\n=====================================");
-        System.out.println("            FILTRADO DE ROLES         ");
-        System.out.println("=====================================");
-
-        System.out.println("\n--> COLABORADORES INTERNOS (EMPLEADOS):");
-        for (Persona p : listaPersonas) {
-            if (p instanceof Empleado) {
-                System.out.println("    * " + p.getNombre() + " | Rol: " + ((Empleado) p).getRol() + ")");
+                switch (opcion) {
+                    case 1:
+                        System.out.println("\n--- LISTADO GENERAL ---");
+                        servicio.mostrarTodos();
+                        break;
+                    case 2:
+                        System.out.print("\nIngrese el nombre a consultar: ");
+                        String busqueda = scanner.nextLine();
+                        servicio.buscarPorNombre(busqueda);
+                        break;
+                    case 3:
+                        System.out.println("Saliendo y cerrando módulos de forma segura...");
+                        break;
+                    default:
+                        System.out.println("❌ Opción inválida. Ingrese un valor de 1 a 3.");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("❌ Error: Ingrese exclusivamente un número entero.");
             }
-        }
+        } while (opcion != 3);
 
-        System.out.println("\n--> SOCIOS COMERCIALES (PROVEEDORES):");
-        for (Persona p : listaPersonas) {
-            if (p instanceof Proveedor) {
-                System.out.println("    * Empresa: " + p.getNombre() + " | Contacto: " + ((Proveedor) p).getNombreContacto());
-            }
-        }
-
-        System.out.println("\n--> CLIENTES REGISTRADOS:");
-        for (Persona p : listaPersonas) {
-            // Si es una Persona pura (no es Empleado ni Proveedor)
-            if (!(p instanceof Empleado) && !(p instanceof Proveedor)) {
-                System.out.println("    * " + p.getNombre() + " | Correo: " + p.getCorreo());
-            }
-        }
-        System.out.println("=================================================");
+        scanner.close();
     }
 }
+

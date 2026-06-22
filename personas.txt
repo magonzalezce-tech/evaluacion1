@@ -1,0 +1,3 @@
+CLIENTE,11.111.111-1,María Ortega,maria@email.com,Av. Vicente Pérez Rosales,450,Puerto Varas
+EMPLEADO,22.222.222-2,Carlos Pérez,carlos@llanquihuetour.cl,Calle San Pedro,1025,Llanquihue,Guía de Turismo,850000
+PROVEEDOR,76.543.210-K,Transporte Marítimo Lago,contacto@lago.cl,Costanera,101,Frutillar,Transporte,Rupert Allen
