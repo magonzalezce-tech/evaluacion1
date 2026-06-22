@@ -27,6 +27,9 @@ src/
     ├── Persona.java       # Clase base general con lógica de validación.
     ├── Empleado.java      # Especialización para colaboradores internos.
     └── Proveedor.java     # Especialización para socios comerciales externos.
+│
+└──servicio/
+   ├──Gestion.java          # Lógica de negocio y persistencia
 ```
 
 ---
