@@ -1,3 +1,7 @@
-CLIENTE,11.111.111-1,María Ortega,maria@email.com,Av. Vicente Pérez Rosales,450,Puerto Varas
-EMPLEADO,22.222.222-2,Carlos Pérez,carlos@llanquihuetour.cl,Calle San Pedro,1025,Llanquihue,Guía de Turismo,850000
-PROVEEDOR,76.543.210-K,Transporte Marítimo Lago,contacto@lago.cl,Costanera,101,Frutillar,Transporte,Rupert Allen
+Nombre: Ruta del Kuchen Frutillar | Duración: 3 horas | Número de Paradas: 4
+Nombre: Sabores de Puerto Varas | Duración: 4 horas | Número de Paradas: 5
+Nombre: Navegación Lago Llanquihue | Duración: 2 horas | Tipo de Embarcación: Catamarán
+Nombre: Vuelta a la Isla en Lancha | Duración: 1 horas | Tipo de Embarcación: Lancha a Motor
+Nombre: Ruta Iglesias de Chiloé | Duración: 8 horas | Lugar Histórico: Iglesia de Castro
+Nombre: Tour Patrimonial Puerto Varas | Duración: 2 horas | Lugar Histórico: Barrio Histórico
+

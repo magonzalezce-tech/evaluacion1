@@ -56,13 +56,13 @@ public class Gestion {
                     if (tipo.equals("EMPLEADO")) {
                         String rol = datos[7].trim();
                         double sueldo = Double.parseDouble(datos[8].trim());
-                        listaPersonas.add(new Empleado(rut, nombre, correo, dir, rol, sueldo));
+                        listaPersonas.add(new Empleado(rut, nombre, correo, rol, sueldo));
                     } else if (tipo.equals("PROVEEDOR")) {
                         String servicio = datos[7].trim();
                         String contacto = datos[8].trim();
-                        listaPersonas.add(new Proveedor(rut, nombre, correo, dir, servicio, contacto));
+                        listaPersonas.add(new Proveedor(rut, nombre, correo, servicio, contacto));
                     } else {
-                        listaPersonas.add(new Persona(rut, nombre, correo, dir));
+                        listaPersonas.add(new Persona(rut, nombre, correo));
                     }
 
                 } catch (Exception e) {

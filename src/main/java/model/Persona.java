@@ -25,22 +25,21 @@ public class Persona {
     /**
      * Relación de composición: Dirección física asociada a la persona.
      */
-    private Direccion direccion;
+    private String direccion;
 
     /**
      * Constructor completo para registrar una Persona.
      * Invoca automáticamente a los métodos setter para sanitizar RUT y Correo desde el origen.
      *
-     * @param rut       Cédula de identidad (ej: 12.345.678-9).
-     * @param nombre    Nombre completo o razón social.
-     * @param correo    Email de contacto (ej: usuario@dominio.com).
-     * @param direccion Instancia previa del objeto Direccion asignado.
+     * @param rut    Cédula de identidad (ej: 12.345.678-9).
+     * @param nombre Nombre completo o razón social.
+     * @param correo Email de contacto (ej: usuario@dominio.com).
      */
 
-    public Persona(String rut, String nombre, String correo, Direccion direccion) {
-        setRut(rut); // Llama al setter para validar desde el nacimiento del objeto
+    public Persona(String rut, String nombre, String correo) {
+        this.rut = rut;
         this.nombre = nombre;
-        setCorreo(correo); // Llama al setter para validar
+        this.correo = correo;
         this.direccion = direccion;
     }
 
@@ -122,14 +121,15 @@ public class Persona {
      * @return Instancia de la dirección asociada.
      */
 
-    public Direccion getDireccion() { return direccion; }
+    public String getDireccion() { return direccion; }
 
     /**
      * Modifica de forma directa el objeto Dirección.
      * @param direccion Nueva instancia de la dirección.
      */
 
-    public void setDireccion(Direccion direccion) { this.direccion = direccion; }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;}
 
     /**
      * Serializa los atributos base de la persona en una cadena de texto legible.
