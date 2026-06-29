@@ -104,6 +104,4 @@ public class Empleado extends Persona {
         return 0;
     }
 
-    {
-        }
-    }
+}

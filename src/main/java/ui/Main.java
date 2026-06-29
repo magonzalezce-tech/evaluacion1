@@ -6,8 +6,8 @@ import data.GestorServicios;
 import model.*;
 
 public class Main {
-    private static ArrayList<ServicioTuristico> listaServicios = GestorServicios.obtenerServiciosDePrueba();
-    private static ArrayList<Persona> listaPersonas = new ArrayList<>();
+    private static final ArrayList<ServicioTuristico> listaServicios = GestorServicios.obtenerServiciosDePrueba();
+    private static final ArrayList<Persona> listaPersonas = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
@@ -137,13 +137,11 @@ public class Main {
             if (!nuevaDir.trim().isEmpty()) p.setDireccion(nuevaDir);
 
 
-            if (p instanceof Empleado) {
-                Empleado emp = (Empleado) p;
+            if (p instanceof Empleado emp) {
                 System.out.print("Nuevo Rol/Puesto (Actual: " + emp.getRol() + "): ");
                 String nuevoRol = teclado.nextLine();
                 if (!nuevoRol.trim().isEmpty()) emp.setRol(nuevoRol);
-            } else if (p instanceof Proveedor) {
-                Proveedor prov = (Proveedor) p;
+            } else if (p instanceof Proveedor prov) {
                 System.out.print("Nuevo Servicio Ofrecido (Actual: " + prov.getServicio() + "): ");
                 String nuevoSer = teclado.nextLine();
                 if (!nuevoSer.trim().isEmpty()) prov.setServicio(nuevoSer);
@@ -165,21 +163,24 @@ public class Main {
             if (!nuevaDurStr.trim().isEmpty()) s.setDuracionHoras(Integer.parseInt(nuevaDurStr));
 
 
-            if (s instanceof RutaGastronomica) {
-                RutaGastronomica ruta = (RutaGastronomica) s;
-                System.out.print("Nuevo Número de Paradas (Actual: " + ruta.getNumeroDeParadas() + "): ");
-                String nuevasParStr = teclado.nextLine();
-                if (!nuevasParStr.trim().isEmpty()) ruta.setNumeroDeParadas(Integer.parseInt(nuevasParStr));
-            } else if (s instanceof PaseoLacustre) {
-                PaseoLacustre paseo = (PaseoLacustre) s;
-                System.out.print("Nuevo Tipo Embarcación (Actual: " + paseo.getTipoEmbarcacion() + "): ");
-                String nuevaEmb = teclado.nextLine();
-                if (!nuevaEmb.trim().isEmpty()) paseo.setTipoEmbarcacion(nuevaEmb);
-            } else if (s instanceof ExcursionCultural) {
-                ExcursionCultural exc = (ExcursionCultural) s;
-                System.out.print("Nuevo Lugar Histórico (Actual: " + exc.getLugarHistorico() + "): ");
-                String nuevoLug = teclado.nextLine();
-                if (!nuevoLug.trim().isEmpty()) exc.setLugarHistorico(nuevoLug);
+            switch (s) {
+                case RutaGastronomica ruta -> {
+                    System.out.print("Nuevo Número de Paradas (Actual: " + ruta.getNumeroDeParadas() + "): ");
+                    String nuevasParStr = teclado.nextLine();
+                    if (!nuevasParStr.trim().isEmpty()) ruta.setNumeroDeParadas(Integer.parseInt(nuevasParStr));
+                }
+                case PaseoLacustre paseo -> {
+                    System.out.print("Nuevo Tipo Embarcación (Actual: " + paseo.getTipoEmbarcacion() + "): ");
+                    String nuevaEmb = teclado.nextLine();
+                    if (!nuevaEmb.trim().isEmpty()) paseo.setTipoEmbarcacion(nuevaEmb);
+                }
+                case ExcursionCultural exc -> {
+                    System.out.print("Nuevo Lugar Histórico (Actual: " + exc.getLugarHistorico() + "): ");
+                    String nuevoLug = teclado.nextLine();
+                    if (!nuevoLug.trim().isEmpty()) exc.setLugarHistorico(nuevoLug);
+                }
+                default -> {
+                }
             }
         }
         System.out.println("✅ Modificación estructural completada con éxito.");

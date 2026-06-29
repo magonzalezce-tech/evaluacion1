@@ -37,7 +37,6 @@ public class Direccion {
 
     /**
      * Obtiene el número del domicilio.
-     * @return El número o indicador domiciliario.
      */
 
     public void setCalle(String calle) { this.calle = calle; }
