@@ -94,4 +94,9 @@ public class Proveedor extends Persona {
 
     public void setServicio(String nuevoSer) {
     }
+
+    @Override
+    public void mostrarResumen() {
+
+    }
 }

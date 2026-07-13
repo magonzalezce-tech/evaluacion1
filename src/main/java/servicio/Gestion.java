@@ -62,7 +62,12 @@ public class Gestion {
                         String contacto = datos[8].trim();
                         listaPersonas.add(new Proveedor(rut, nombre, correo, servicio, contacto));
                     } else {
-                        listaPersonas.add(new Persona(rut, nombre, correo));
+                        listaPersonas.add(new Persona(rut, nombre, correo) {
+                            @Override
+                            public void mostrarResumen() {
+
+                            }
+                        });
                     }
 
                 } catch (Exception e) {

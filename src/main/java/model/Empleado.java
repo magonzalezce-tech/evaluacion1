@@ -104,4 +104,8 @@ public class Empleado extends Persona {
         return 0;
     }
 
+    @Override
+    public void mostrarResumen() {
+
+    }
 }
