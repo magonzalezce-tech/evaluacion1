@@ -1,97 +1,61 @@
-# Sistema de Gestión de Personas - Llanquihue Tour 🌲✈️
+# 🌲 Llanquihue Tour — Sistema de Gestión de Personas ✈️
 
-Este proyecto consiste en el diseño e implementación de un modelo de clases robusto y estructurado en Java para la empresa **Llanquihue Tour**. El sistema aborda y resuelve los problemas críticos de información duplicada, gestión manual informal y falta de diferenciación de roles mediante la aplicación rigurosa de los principios de la Programación Orientada a Objetos (POO).
+![Java](https://shields.io)
+![Paradigma](https://shields.io)
+![Entorno](https://shields.io)
 
-## 🚀 Características Principales
-
-- **Arquitectura Limpia:** Organización desacoplada mediante el uso estricto de paquetes (`model` y `app`).
-- **Encapsulamiento Avanzado:** Atributos privados con acceso controlado mediante métodos *getters* y *setters*.
-- **Validación Automatizada de Datos:** Filtros nativos mediante expresiones regulares (Regex) para la purificación de RUT chilenos y correos electrónicos desde el constructor.
-- **Relaciones de Objetos Eficientes:** 
-  - **Composición:** Asociación fuerte entre la entidad `Persona` y su `Direccion`.
-  - **Herencia:** Especialización de roles claros para `Empleado` y `Proveedor` extendiendo la clase base.
-- **Polimorfismo y Colecciones Dinámicas:** Centralización del inventario de personas en un único `ArrayList<Persona>`, permitiendo el filtrado y clasificación en tiempo de ejecución.
+Solución en **Java** para la gestión de clientes, empleados y proveedores de "Llanquihue Tour", enfocada en estructurar datos y mejorar la organización mediante Programación Orientada a Objetos.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🎯 Solución Técnica
+* 📉 **Gestión de Datos:** Uso de colecciones para eliminar duplicidad.
+* 🛡️ **Validaciones:** Lógica para limpieza de datos (RUT/Correo) usando expresiones regulares.
+* 👤 **Roles:** Jerarquización de personas, empleados y proveedores.
 
-El código se encuentra organizado bajo el estándar de proyectos Java en las siguientes carpetas:
+---
 
+## 🏗️ Implementación POO
+El sistema aplica los pilares de la programación orientada a objetos:
+1.  **Encapsulamiento:** Métodos públicos para acceder a atributos privados.
+2.  **Composición:** Integración de la clase `Direccion` dentro de `Persona`.
+3.  **Herencia:** Especialización de `Persona` para `Empleado` y `Proveedor`.
+4.  **Polimorfismo:** Manejo de datos mediante `ArrayList<Persona>`.
+
+---
+
+## 📂 Estructura
 ```text
 src/
-├── app/
-│   └── Main.java          # Clase principal de ejecución y pruebas de carga.
-└── model/
-    ├── Direccion.java     # Componente de composición para ubicaciones.
-    ├── Persona.java       # Clase base general con lógica de validación.
-    ├── Empleado.java      # Especialización para colaboradores internos.
-    └── Proveedor.java     # Especialización para socios comerciales externos.
-│
-└──servicio/
-   ├──Gestion.java          # Lógica de negocio y persistencia
+├── app/         # Punto de entrada (Main.java)
+├── model/       # Clases: Persona, Direccion, Empleado, Proveedor
+└── servicio/    # Lógica de negocio (Gestion.java)
 ```
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
-
-- **Lenguaje:** Java (Compatible con JDK 11 o superior)
-- **IDE Recomendado:** IntelliJ IDEA / Eclipse / VS Code
-- **Paradigma:** Programación Orientada a Objetos (POO)
-
----
-
-## 💻 Instrucciones de Instalación y Ejecución
-
-### Prerrequisitos
-Asegúrate de tener instalado el **Java Development Kit (JDK)** en tu sistema. Puedes verificarlo ejecutando:
-```bash
-java -version
-```
-
-### Clonar y Ejecutar de Forma Local
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com
-   cd llanquihue-tour-gestion
-   ```
-
-2. **Compilar el proyecto (desde la carpeta `src`):**
-   ```bash
-   javac app/Main.java model/*.java
-   ```
-
-3. **Ejecutar la aplicación:**
-   ```bash
-   java app.Main
-   ```
+## 🛠️ Requisitos e Instalación
+*   **JDK 11+**
+1.  `git clone https://github.com/magonzalezce-tech/evaluacion1.git`
+2.  `cd evaluacion1/src`
+3.  `javac app/Main.java model/*.java servicio/*.java`
+4.  `java app.Main`
 
 ---
 
-## 📊 Demostración de Salida en Consola
-
-Al ejecutar el sistema, se simulará la carga centralizada de datos y la activación de los filtros automáticos de roles, además de demostrar la detección de datos inválidos:
-
+## 📊 Vista Previa
 ```text
-✅ Inicialización completada. Registros cargados: 3
-
---- MENÚ DE CONTROL ---
-1. Mostrar todos los registros
-2. Buscar registro por nombre
-3. Salir del sistema
-Seleccione una opción: 1
-
---- LISTADO GENERAL ---
-RUT: 11.111.111-1 | Nombre: María Ortega | Correo: maria@email.com | Dirección: [Av. Vicente Pérez Rosales N° 450, Puerto Varas]
-RUT: 22.222.222-2 | Nombre: Carlos Pérez | Correo: carlos@llanquihuetour.cl | Dirección: [Calle San Pedro N° 1025, Llanquihue] | Rol: Guía de Turismo | Sueldo Base: $850000.0
-RUT: 76.543.210-K | Nombre: Transporte Marítimo Lago | Correo: contacto@lago.cl | Dirección: [Costanera N° 101, Frutillar] | Servicio: Transporte | Contacto: Rupert Allen
+RUT: 11.111.111-1 | Nombre: María Ortega | ...
+RUT: 22.222.222-2 | Nombre: Carlos Pérez | Rol: Guía | ...
 ```
 
 ---
 
-## 📈 Próximos Pasos (Roadmap)
+## 📈 Roadmap
+*   [ ] 🎛️ Migrar a `Scanner` para interacción dinámica.
+*   [ ] ⚠️ Implementar excepciones personalizadas.
+*   [ ] 🗃️ Integrar módulo de Paquetes Turísticos.
+*   [ ] 💾 Migración a base de datos SQL.
 
 - [ ] Implementar un menú interactivo en consola utilizando la clase `Scanner`.
 - [ ] Incorporar el manejo de excepciones personalizadas (`Exception`) para robustecer las alertas de datos inválidos.
