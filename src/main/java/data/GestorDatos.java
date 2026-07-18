@@ -14,10 +14,10 @@ public class GestorDatos {
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String linea;
             while ((linea = br.readLine()) != null) {
-                // Saltar líneas vacías si las hay
+               
                 if (linea.trim().isEmpty()) continue;
 
-                // Separar datos por punto y coma
+               
                 String[] datos = linea.split(";");
 
                 if (datos.length == 3) {
@@ -25,7 +25,6 @@ public class GestorDatos {
                     String tipo = datos[1].trim();
                     int precio = Integer.parseInt(datos[2].trim());
 
-                    // Crear objeto y añadir a la lista
                     Tour tour = new Tour(nombre, tipo, precio);
                     listaTours.add(tour);
                 }
