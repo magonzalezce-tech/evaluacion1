@@ -10,7 +10,7 @@ public class TourService {
         this.inventarioTours = inventarioTours;
     }
 
-    // Operación 1: Recorrido y visualización completa
+ 
     public void mostrarCatalogoCompleto() {
         if (inventarioTours.isEmpty()) {
             System.out.println("El catálogo está vacío.");
@@ -21,7 +21,7 @@ public class TourService {
         }
     }
 
-    // Operación 2: Búsqueda simple automatizada por coincidencia de nombre
+   
     public void buscarTourPorNombre(String terminoBusqueda) {
         boolean encontrado = false;
         for (Tour t : inventarioTours) {
@@ -35,7 +35,7 @@ public class TourService {
         }
     }
 
-    // Operación 3: Filtrado avanzado por tipo de experiencia
+  
     public void filtrarToursPorTipo(String tipoFiltro) {
         boolean coincidencia = false;
         for (Tour t : inventarioTours) {
