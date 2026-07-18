@@ -1,0 +1,5 @@
+Ruta de los Colonos;Cultural;25000
+Navegación Isla Huar;Aventura;45000
+Sabores de Angelmó;Gastronómico;18000
+Volcán Osorno Extremo;Aventura;55000
+Circuito Lago Llanquihue;Cultural;32000
