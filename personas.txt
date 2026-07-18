@@ -1,7 +1,0 @@
-Nombre: Ruta del Kuchen Frutillar | Duración: 3 horas | Número de Paradas: 4
-Nombre: Sabores de Puerto Varas | Duración: 4 horas | Número de Paradas: 5
-Nombre: Navegación Lago Llanquihue | Duración: 2 horas | Tipo de Embarcación: Catamarán
-Nombre: Vuelta a la Isla en Lancha | Duración: 1 horas | Tipo de Embarcación: Lancha a Motor
-Nombre: Ruta Iglesias de Chiloé | Duración: 8 horas | Lugar Histórico: Iglesia de Castro
-Nombre: Tour Patrimonial Puerto Varas | Duración: 2 horas | Lugar Histórico: Barrio Histórico
-

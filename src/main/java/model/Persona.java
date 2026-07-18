@@ -1,39 +1,25 @@
 package model;
 
-public abstract class Persona implements Registrable {
-    protected String rut;
-    protected String nombre;
-    protected String correo;
+public abstract class Persona {
+    private String rut;
+    private String nombre;
+    private String email;
+    private Direccion direccion; // Relación de Composición
 
-
-    public Persona(String rut, String nombre, String correo) {
+    public Persona(String rut, String nombre, String email, Direccion direccion) {
         this.rut = rut;
         this.nombre = nombre;
-        this.correo = correo;
+        this.email = email;
+        this.direccion = direccion;
     }
 
+    public String getRut() { return rut; }
+    public String getNombre() { return nombre; }
+    public String getEmail() { return email; }
+    public Direccion getDireccion() { return direccion; }
 
-    public String getRut() {
-        return rut;
-    }
-
-    public void setRut(String rut) {
-        this.rut = rut;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    @Override
+    public String toString() {
+        return "RUT: " + rut + " | Nombre: " + nombre + " | Email: " + email + " | Ubicación: " + direccion;
     }
 }
